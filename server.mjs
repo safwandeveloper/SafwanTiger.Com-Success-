@@ -101,7 +101,8 @@ async function handle(request, response) {
     }
   }
 
-  const requestedPath = url.pathname === "/" ? "/index.html" : url.pathname;
+  const pageRoutes = new Set(["/", "/success", "/payment/success"]);
+  const requestedPath = pageRoutes.has(url.pathname) ? "/index.html" : url.pathname;
   const safePath = normalize(requestedPath).replace(/^(\.\.[/\\])+/, "");
   const filePath = join(publicDir, safePath);
 
