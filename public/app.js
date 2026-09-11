@@ -1,5 +1,10 @@
 const params = new URLSearchParams(window.location.search);
-const invoiceId = params.get("invoice_id");
+const invoiceId =
+  params.get("invoice_id") ||
+  params.get("invoiceId") ||
+  params.get("val_id") ||
+  params.get("invoice") ||
+  params.get("id");
 
 const states = {
   loading: document.querySelector("#loading-state"),
