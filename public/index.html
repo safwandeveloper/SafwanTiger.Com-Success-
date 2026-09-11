@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101a2c" />
+    <title>Payment status · SafwanTiger</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="status-card" aria-live="polite">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true">ST</div>
+          <span class="brand-name">SafwanTiger</span>
+          <span class="secure-label"><span class="secure-dot"></span> Secure checkout</span>
+        </div>
+
+        <div id="loading-state" class="state-panel">
+          <div class="spinner" aria-hidden="true"></div>
+          <p class="eyebrow">Confirming your payment</p>
+          <h1>One moment, we’re checking ZiniPay.</h1>
+          <p class="supporting-copy">We verify every invoice with the payment provider before confirming your order.</p>
+        </div>
+
+        <div id="success-state" class="state-panel hidden">
+          <div class="mascot-frame">
+            <img src="/safwantiger-mascot.jpg" alt="SafwanTiger mascot" />
+          </div>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow">Payment confirmed</p>
+          <h1>Your payment is complete.</h1>
+          <p class="supporting-copy">Thank you. Your order is now verified and ready for the next step.</p>
+        </div>
+
+        <div id="pending-state" class="state-panel hidden">
+          <div class="pending-icon" aria-hidden="true">↻</div>
+          <p class="eyebrow">Still processing</p>
+          <h1>We’re waiting for confirmation.</h1>
+          <p class="supporting-copy">Your payment may still be processing. Check again in a few seconds—do not pay twice.</p>
+          <button id="retry-button" class="primary-button" type="button">Check again</button>
+        </div>
+
+        <div id="failed-state" class="state-panel hidden">
+          <div class="failed-icon" aria-hidden="true">!</div>
+          <p class="eyebrow">Payment not confirmed</p>
+          <h1>We couldn’t confirm this invoice.</h1>
+          <p class="supporting-copy">No order will be marked as paid until ZiniPay reports a completed transaction.</p>
+          <button id="retry-failed-button" class="primary-button" type="button">Try again</button>
+        </div>
+
+        <dl id="payment-details" class="payment-details hidden">
+          <div>
+            <dt>Invoice</dt>
+            <dd id="invoice-value">—</dd>
+          </div>
+          <div>
+            <dt>Method</dt>
+            <dd id="method-value">bKash</dd>
+          </div>
+          <div id="amount-row">
+            <dt>Amount</dt>
+            <dd id="amount-value">—</dd>
+          </div>
+          <div id="transaction-row">
+            <dt>Transaction ID</dt>
+            <dd id="transaction-value">—</dd>
+          </div>
+        </dl>
+
+        <footer class="card-footer">
+          <span>Need help?</span>
+          <a href="mailto:support@safwantiger.com">Contact support</a>
+        </footer>
+      </section>
+      <p class="legal-note">Payments processed securely by ZiniPay · SafwanTiger</p>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
