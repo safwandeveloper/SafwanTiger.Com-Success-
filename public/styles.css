@@ -50,14 +50,11 @@ button, a { font: inherit; }
   width: 36px;
   height: 36px;
   place-items: center;
-  color: white;
   background: var(--ink);
   border-radius: 11px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  overflow: hidden;
 }
+.brand-mark img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 34%; }
 .brand-name { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -0.03em; }
 .secure-label { margin-left: auto; color: var(--ink-soft); font-size: 12px; }
 .secure-dot { display: inline-block; width: 7px; height: 7px; margin-right: 5px; background: var(--success); border-radius: 50%; }
